@@ -1,0 +1,99 @@
+public class TestFiles.TC10 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC10 this;
+
+        this := @this: TestFiles.TC10;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int func(int)
+    {
+        TestFiles.TC10 this;
+        int x, $i0;
+        byte temp;
+
+        this := @this: TestFiles.TC10;
+        x := @parameter0: int;
+        temp = 100;
+        $i0 = x + temp;
+        return $i0;
+    }
+
+    int swappingAgain(int)
+    {
+        TestFiles.TC10 this;
+        int x;
+
+        this := @this: TestFiles.TC10;
+        x := @parameter0: int;
+        if x <= 0 goto label0;
+
+        return 2;
+
+     label0:
+        virtualinvoke this.<TestFiles.TC10: int func(int)>(x);
+        return 10;
+    }
+
+    int foo(int)
+    {
+        TestFiles.TC10 this;
+        int play, alpha, gamma, $i0, beta, $i1;
+        byte beta;
+
+        this := @this: TestFiles.TC10;
+        play := @parameter0: int;
+        beta = 0;
+        $i0 = virtualinvoke this.<TestFiles.TC10: int func(int)>(1);
+        alpha = beta + $i0;
+        beta = virtualinvoke this.<TestFiles.TC10: int swappingAgain(int)>(alpha);
+        gamma = 0;
+        goto label1;
+
+     label0:
+        gamma = virtualinvoke this.<TestFiles.TC10: int func(int)>(play);
+        $i0 = virtualinvoke this.<TestFiles.TC10: int swappingAgain(int)>(gamma);
+        beta = beta - $i0;
+
+     label1:
+        if beta > 3 goto label0;
+
+        $i1 = beta + gamma;
+        return $i1;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int play, x, y;
+        TestFiles.TC10 s, $r1;
+        java.lang.String $r0;
+        java.io.PrintStream $r2;
+
+        args := @parameter0: java.lang.String[];
+        $r0 = args[0];
+        play = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        $r1 = new TestFiles.TC10;
+        specialinvoke $r1.<TestFiles.TC10: void <init>()>();
+        s = $r1;
+        x = 0;
+        if play <= 0 goto label0;
+
+        x = virtualinvoke s.<TestFiles.TC10: int foo(int)>(play);
+        goto label1;
+
+     label0:
+        y = virtualinvoke s.<TestFiles.TC10: int swappingAgain(int)>(play);
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(y);
+
+     label1:
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(x);
+        return;
+    }
+}

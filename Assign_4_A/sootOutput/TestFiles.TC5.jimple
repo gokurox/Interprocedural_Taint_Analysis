@@ -1,0 +1,42 @@
+public class TestFiles.TC5 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC5 this;
+
+        this := @this: TestFiles.TC5;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int bar(int, int)
+    {
+        TestFiles.TC5 this;
+        int x, y, a, res;
+        boolean a;
+        byte res;
+
+        this := @this: TestFiles.TC5;
+        x := @parameter0: int;
+        y := @parameter1: int;
+        a = 0;
+        res = 10;
+        if res <= 10 goto label0;
+
+        a = x + y;
+        goto label1;
+
+     label0:
+        a = 20;
+
+     label1:
+        if a != 20 goto label2;
+
+        res = a;
+        return a;
+
+     label2:
+        return res;
+    }
+}

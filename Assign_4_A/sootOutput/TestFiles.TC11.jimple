@@ -1,0 +1,98 @@
+public class TestFiles.TC11 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC11 this;
+
+        this := @this: TestFiles.TC11;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int factorialOne(int)
+    {
+        TestFiles.TC11 this;
+        int x;
+
+        this := @this: TestFiles.TC11;
+        x := @parameter0: int;
+        return 1;
+    }
+
+    int factorial(int)
+    {
+        TestFiles.TC11 this;
+        int y, fact, i;
+
+        this := @this: TestFiles.TC11;
+        y := @parameter0: int;
+        fact = virtualinvoke this.<TestFiles.TC11: int factorialOne(int)>(y);
+        fact = fact * y;
+        i = 2;
+        goto label1;
+
+     label0:
+        fact = fact * i;
+        i = i + 1;
+
+     label1:
+        if i < y goto label0;
+
+        return fact;
+    }
+
+    int numPermutations(int, int)
+    {
+        TestFiles.TC11 this;
+        int n, k, top, bottom, $i0;
+
+        this := @this: TestFiles.TC11;
+        n := @parameter0: int;
+        k := @parameter1: int;
+        top = virtualinvoke this.<TestFiles.TC11: int factorial(int)>(n);
+        bottom = virtualinvoke this.<TestFiles.TC11: int factorial(int)>(k);
+        $i0 = top / bottom;
+        return $i0;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int n, k, res;
+        TestFiles.TC11 f, $r1;
+        java.lang.String $r0;
+        java.io.PrintStream $r2;
+
+        args := @parameter0: java.lang.String[];
+        $r0 = args[0];
+        n = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        $r0 = args[1];
+        k = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        $r1 = new TestFiles.TC11;
+        specialinvoke $r1.<TestFiles.TC11: void <init>()>();
+        f = $r1;
+        if n <= k goto label0;
+
+        res = virtualinvoke f.<TestFiles.TC11: int numPermutations(int,int)>(n, k);
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(res);
+        goto label2;
+
+     label0:
+        if n != k goto label1;
+
+        res = virtualinvoke f.<TestFiles.TC11: int numPermutations(int,int)>(n, 2);
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(res);
+        goto label2;
+
+     label1:
+        res = virtualinvoke f.<TestFiles.TC11: int numPermutations(int,int)>(10, 2);
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(res);
+
+     label2:
+        return;
+    }
+}

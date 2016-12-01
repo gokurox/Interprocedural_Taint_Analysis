@@ -1,0 +1,34 @@
+public class TestFiles.TC3 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC3 this;
+
+        this := @this: TestFiles.TC3;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int fact(int)
+    {
+        TestFiles.TC3 this;
+        int n, res;
+
+        this := @this: TestFiles.TC3;
+        n := @parameter0: int;
+        res = 1;
+        if n != 1 goto label1;
+
+        return res;
+
+     label0:
+        res = res * n;
+        n = n + -1;
+
+     label1:
+        if n > 1 goto label0;
+
+        return res;
+    }
+}

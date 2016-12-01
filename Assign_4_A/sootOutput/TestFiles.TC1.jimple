@@ -1,0 +1,26 @@
+public class TestFiles.TC1 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC1 this;
+
+        this := @this: TestFiles.TC1;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int foo(int)
+    {
+        TestFiles.TC1 this;
+        int x, a;
+        byte x, a;
+
+        this := @this: TestFiles.TC1;
+        x := @parameter0: int;
+        a = x;
+        x = 10;
+        a = x;
+        return a;
+    }
+}

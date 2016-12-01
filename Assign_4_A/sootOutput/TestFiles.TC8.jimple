@@ -1,0 +1,98 @@
+public class TestFiles.TC8 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC8 this;
+
+        this := @this: TestFiles.TC8;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static int func(int, int)
+    {
+        int x, y, $i0;
+        byte temp;
+
+        x := @parameter0: int;
+        y := @parameter1: int;
+        temp = 100;
+        $i0 = x + temp;
+        $i0 = $i0 + y;
+        return $i0;
+    }
+
+    public static int swappingAgain(int, int, int)
+    {
+        int x, y, q, $i0;
+
+        x := @parameter0: int;
+        y := @parameter1: int;
+        q := @parameter2: int;
+        $i0 = x + y;
+        $i0 = $i0 + q;
+        return $i0;
+    }
+
+    int foo(int)
+    {
+        TestFiles.TC8 this;
+        int play, $i0;
+
+        this := @this: TestFiles.TC8;
+        play := @parameter0: int;
+        $i0 = play * play;
+        return $i0;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int play, x, alpha, gamma, $i0, beta;
+        TestFiles.TC8 s, $r1;
+        byte beta;
+        java.lang.String $r0;
+        java.io.PrintStream $r2;
+
+        args := @parameter0: java.lang.String[];
+        $r0 = args[0];
+        play = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        $r1 = new TestFiles.TC8;
+        specialinvoke $r1.<TestFiles.TC8: void <init>()>();
+        s = $r1;
+        beta = 0;
+        if play <= 0 goto label0;
+
+        x = virtualinvoke s.<TestFiles.TC8: int foo(int)>(play);
+        goto label1;
+
+     label0:
+        x = virtualinvoke s.<TestFiles.TC8: int foo(int)>(4);
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(x);
+
+     label1:
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(x);
+        $i0 = staticinvoke <TestFiles.TC8: int func(int,int)>(1, 2);
+        alpha = beta + $i0;
+        beta = staticinvoke <TestFiles.TC8: int swappingAgain(int,int,int)>(beta, alpha, beta);
+        gamma = 0;
+        goto label3;
+
+     label2:
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(gamma);
+        gamma = staticinvoke <TestFiles.TC8: int swappingAgain(int,int,int)>(1, 2, play);
+        $i0 = staticinvoke <TestFiles.TC8: int func(int,int)>(beta, gamma);
+        beta = beta - $i0;
+
+     label3:
+        if beta > 3 goto label2;
+
+        $r2 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r2.<java.io.PrintStream: void println(int)>(beta);
+        return;
+    }
+}

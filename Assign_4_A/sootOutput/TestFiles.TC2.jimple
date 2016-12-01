@@ -1,0 +1,40 @@
+public class TestFiles.TC2 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC2 this;
+
+        this := @this: TestFiles.TC2;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    int fun(int, int)
+    {
+        TestFiles.TC2 this;
+        int x, y, a;
+        byte y, a;
+        java.io.PrintStream $r0;
+
+        this := @this: TestFiles.TC2;
+        x := @parameter0: int;
+        y := @parameter1: int;
+        a = x;
+        if a != 10 goto label0;
+
+        y = 10;
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>(y);
+        goto label1;
+
+     label0:
+        y = 20;
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>(y);
+
+     label1:
+        a = y;
+        return a;
+    }
+}

@@ -1,0 +1,62 @@
+public class TestFiles.TC7 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC7 this;
+
+        this := @this: TestFiles.TC7;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static int func(int, int)
+    {
+        int x, y, temp, x, y, $i0;
+
+        x := @parameter0: int;
+        y := @parameter1: int;
+        temp = x;
+        x = y;
+        y = temp;
+        $i0 = x + temp;
+        $i0 = $i0 + y;
+        return $i0;
+    }
+
+    public static int foo(int)
+    {
+        int play, alpha, $i0, gamma;
+        byte beta, gamma;
+
+        play := @parameter0: int;
+        beta = 0;
+        $i0 = staticinvoke <TestFiles.TC7: int func(int,int)>(1, play);
+        alpha = beta + $i0;
+        gamma = 3;
+        if alpha != 2 goto label0;
+
+        return gamma;
+
+     label0:
+        $i0 = staticinvoke <TestFiles.TC7: int func(int,int)>(gamma, beta);
+        gamma = beta + $i0;
+        return gamma;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int play, x;
+        java.lang.String $r0;
+        java.io.PrintStream $r1;
+
+        args := @parameter0: java.lang.String[];
+        $r0 = args[0];
+        play = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>($r0);
+        x = staticinvoke <TestFiles.TC7: int foo(int)>(play);
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r1.<java.io.PrintStream: void println(int)>(x);
+        return;
+    }
+}

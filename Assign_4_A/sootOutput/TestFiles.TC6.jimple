@@ -1,0 +1,34 @@
+public class TestFiles.TC6 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestFiles.TC6 this;
+
+        this := @this: TestFiles.TC6;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    void doit(int)
+    {
+        TestFiles.TC6 this;
+        int x, x, a;
+        byte a;
+        java.io.PrintStream $r0;
+
+        this := @this: TestFiles.TC6;
+        x := @parameter0: int;
+        a = 10;
+        x = x + a;
+        a = x - a;
+        x = x - a;
+        x = x + a;
+        a = x - a;
+        x = x - a;
+        virtualinvoke this.<TestFiles.TC6: void doit(int)>(x);
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void print(int)>(a);
+        return;
+    }
+}
